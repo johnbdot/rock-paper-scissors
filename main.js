@@ -1,13 +1,8 @@
-// prompt player name
-// prompt computer name
-// player chooses
-// computer random choice
-// score = 0
-// if win, score +1
-// if lose, score -1
-// tie if else
-// display results
-// first to score 10 points, wins. game ends. ask to restart.
+// click play.
+// enter player name, opponent's name.
+// player chooses. computer randmonly chooses.
+// display results. update scores.
+// best out of 7 wins.
 
 let playerScore = 0;
 let computerScore = 0;
@@ -22,6 +17,14 @@ const compChoiceText = document.querySelector(".computer-choice");
 function roundStart() {
   const playerNameInput = prompt("Enter your name:");
   const computerNameInput = prompt("Enter opponent's name:");
+
   playerNameText.textContent = playerNameInput;
   computerNameText.textContent = computerNameInput;
+}
+
+function computerChoice() {
+  const choice = ["rock", "paper", "scissors"];
+  const random = Math.floor(Math.random() * choice.length);
+
+  console.log(choice[random]);
 }
