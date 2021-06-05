@@ -3,3 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+.container {
+  /* border: 5px solid red; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.player-panel {
+  /* border: 5px solid blue; */
+  width: 45%;
+}
+.versus-panel {
+  /* border: 5px solid green; */
+  width: 10%;
+}
+.computer-panel {
+  /* border: 5px solid pink; */
+  width: 45%;
+}
+.player-name,
+.player-score,
+.player-choice,
+.computer-name,
+.computer-score,
+.computer-choice {
+  padding: 20px;
+}
+.versus-results {
+  padding: 20px;
+}

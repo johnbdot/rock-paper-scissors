@@ -6,7 +6,8 @@
 // tie if else
 // first to score 10 points, wins. game ends. ask to restart.
 
-let score = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 function playerChoice() {
   // choose rock, paper, scissors
