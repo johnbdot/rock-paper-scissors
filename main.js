@@ -10,8 +10,8 @@ const resultsText = document.querySelector(".results");
 const computerChoiceText = document.querySelector(".computer-choice");
 
 function roundStart() {
-  const playerNameInput = prompt("Enter your name:");
-  const computerNameInput = prompt("Enter opponent's name:");
+  const playerNameInput = prompt("Enter your name:", randomName());
+  const computerNameInput = prompt("Enter opponent's name:", randomName());
 
   playerChoice();
 
@@ -27,15 +27,30 @@ function playerChoice() {
   rock.addEventListener("click", computerText);
   paper.addEventListener("click", computerText);
   scissors.addEventListener("click", computerText);
+
+  function computerText() {
+    computerChoiceText.textContent = computerChoice();
+    console.log(this.textContent);
+    return this.textContent;
+  }
+
+  function computerChoice() {
+    const choice = ["rock", "paper", "scissors"];
+    const random = Math.floor(Math.random() * choice.length);
+
+    return choice[random];
+  }
+
+  if (computerText === "Rock") {
+    if (computerChoice === "rock") {
+      console.log("tie");
+    }
+  }
 }
 
-function computerChoice() {
-  const choice = ["rock", "paper", "scissors"];
+function randomName() {
+  const choice = ["Joe", "Bob", "Sally"];
   const random = Math.floor(Math.random() * choice.length);
 
   return choice[random];
-}
-
-function computerText() {
-  computerChoiceText.textContent = computerChoice();
 }
