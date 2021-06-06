@@ -31,34 +31,43 @@ function play() {
   function rock() {
     computerText();
     if (computerChoice() === "Paper") {
+      computerScore++;
       console.log("lose...");
     } else if (computerChoice() === "Scissors") {
+      playerScore++;
       console.log("win!");
     } else {
       console.log("tie");
     }
+    console.log(playerScore + computerScore);
   }
 
   function paper() {
     computerText();
     if (computerChoice() === "Scissors") {
+      computerScore++;
       console.log("lose...");
     } else if (computerChoice() === "Rock") {
+      playerScore++;
       console.log("win!");
     } else {
       console.log("tie");
     }
+    console.log(playerScore + computerScore);
   }
 
   function scissors() {
     computerText();
     if (computerChoice() === "Rock") {
+      computerScore++;
       console.log("lose...");
     } else if (computerChoice() === "Paper") {
+      playerScore++;
       console.log("win!");
     } else {
       console.log("tie");
     }
+    console.log(playerScore + computerScore);
   }
 
   function computerText() {
