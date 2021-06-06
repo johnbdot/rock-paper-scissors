@@ -13,38 +13,63 @@ function roundStart() {
   const playerNameInput = prompt("Enter your name:", randomName());
   const computerNameInput = prompt("Enter opponent's name:", randomName());
 
-  playerChoice();
+  play();
 
   playerNameText.textContent = playerNameInput;
   computerNameText.textContent = computerNameInput;
 }
 
-function playerChoice() {
-  const rock = document.querySelector(".rock");
-  const paper = document.querySelector(".paper");
-  const scissors = document.querySelector(".scissors");
+function play() {
+  const rockButton = document.querySelector(".rock");
+  const paperButton = document.querySelector(".paper");
+  const scissorsButton = document.querySelector(".scissors");
 
-  rock.addEventListener("click", computerText);
-  paper.addEventListener("click", computerText);
-  scissors.addEventListener("click", computerText);
+  rockButton.addEventListener("click", rock);
+  paperButton.addEventListener("click", paper);
+  scissorsButton.addEventListener("click", scissors);
+
+  function rock() {
+    computerText();
+    if (computerChoice() === "Paper") {
+      console.log("lose...");
+    } else if (computerChoice() === "Scissors") {
+      console.log("win!");
+    } else {
+      console.log("tie");
+    }
+  }
+
+  function paper() {
+    computerText();
+    if (computerChoice() === "Scissors") {
+      console.log("lose...");
+    } else if (computerChoice() === "Rock") {
+      console.log("win!");
+    } else {
+      console.log("tie");
+    }
+  }
+
+  function scissors() {
+    computerText();
+    if (computerChoice() === "Rock") {
+      console.log("lose...");
+    } else if (computerChoice() === "Paper") {
+      console.log("win!");
+    } else {
+      console.log("tie");
+    }
+  }
 
   function computerText() {
     computerChoiceText.textContent = computerChoice();
-    console.log(this.textContent);
-    return this.textContent;
   }
 
   function computerChoice() {
-    const choice = ["rock", "paper", "scissors"];
+    const choice = ["Rock", "Paper", "Scissors"];
     const random = Math.floor(Math.random() * choice.length);
 
     return choice[random];
-  }
-
-  if (computerText === "Rock") {
-    if (computerChoice === "rock") {
-      console.log("tie");
-    }
   }
 }
 
