@@ -1,10 +1,3 @@
-// click play.
-// enter player name, opponent's name.
-// continue game while scores are below 7.
-// player chooses. computer randmonly chooses.
-// display results. update scores.
-// best out of 7 wins. game ends.
-
 let playerScore = 0;
 let computerScore = 0;
 const maxScore = 7;
