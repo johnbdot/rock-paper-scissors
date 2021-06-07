@@ -15,15 +15,15 @@
 }
 .player-panel {
   /* border: 5px solid blue; */
-  width: 45%;
+  width: 40%;
 }
 .versus-panel {
   /* border: 5px solid green; */
-  width: 10%;
+  width: 20%;
 }
 .computer-panel {
   /* border: 5px solid pink; */
-  width: 45%;
+  width: 40%;
 }
 .player-name,
 .player-score,
