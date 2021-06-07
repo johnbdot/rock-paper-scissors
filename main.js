@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-const maxScore = 7;
 
 const playerNameText = document.querySelector(".player-name");
 const computerNameText = document.querySelector(".computer-name");
@@ -42,7 +41,6 @@ function play() {
       computerChoiceText.textContent = "Rock";
       tie();
     }
-
     playerScoreText.textContent = playerScore;
     computerScoreText.textContent = computerScore;
   }
@@ -60,7 +58,6 @@ function play() {
       computerChoiceText.textContent = "Paper";
       tie();
     }
-
     playerScoreText.textContent = playerScore;
     computerScoreText.textContent = computerScore;
   }
@@ -78,7 +75,6 @@ function play() {
       computerChoiceText.textContent = "Scissors";
       tie();
     }
-
     playerScoreText.textContent = playerScore;
     computerScoreText.textContent = computerScore;
   }
@@ -105,7 +101,6 @@ function play() {
 function randomName() {
   const choice = ["Joe", "Bob", "Sally"];
   const random = Math.floor(Math.random() * choice.length);
-
   return choice[random];
 }
 
@@ -113,6 +108,5 @@ function randomName() {
 function computerChoice() {
   const choice = ["Rock", "Paper", "Scissors"];
   const random = Math.floor(Math.random() * choice.length);
-
   return choice[random];
 }
