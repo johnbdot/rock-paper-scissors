@@ -7,16 +7,27 @@ const playerScoreText = document.querySelector(".player-score");
 const computerScoreText = document.querySelector(".computer-score");
 const resultsText = document.querySelector(".versus-results");
 const computerChoiceText = document.querySelector(".computer-choice");
+const startButton = document.querySelector(".start-button");
+const restartButton = document.querySelector(".restart-button");
 
 // Round start
 function roundStart() {
   const playerNameInput = prompt("Enter your name:", randomName());
   const computerNameInput = prompt("Enter opponent's name:", randomName());
 
-  play();
+  playerScore = 0;
+  computerScore = 0;
 
+  playerScoreText.textContent = playerScore;
+  computerScoreText.textContent = computerScore;
   playerNameText.textContent = playerNameInput;
   computerNameText.textContent = computerNameInput;
+
+  play();
+
+  startButton.textContent = "Restart";
+  startButton.className = "restart-button";
+  document.querySelector(".restart-button").addEventListener("click", restart);
 }
 
 // Play
@@ -41,8 +52,7 @@ function play() {
       computerChoiceText.textContent = "Rock";
       tie();
     }
-    playerScoreText.textContent = playerScore;
-    computerScoreText.textContent = computerScore;
+    scores();
   }
 
   // Player choose Paper
@@ -58,8 +68,7 @@ function play() {
       computerChoiceText.textContent = "Paper";
       tie();
     }
-    playerScoreText.textContent = playerScore;
-    computerScoreText.textContent = computerScore;
+    scores();
   }
 
   // Player chooses Scissors
@@ -75,8 +84,7 @@ function play() {
       computerChoiceText.textContent = "Scissors";
       tie();
     }
-    playerScoreText.textContent = playerScore;
-    computerScoreText.textContent = computerScore;
+    scores();
   }
 
   // Win
@@ -95,6 +103,12 @@ function play() {
   function tie() {
     resultsText.textContent = "It's a tie! 😅";
   }
+
+  // Scores display
+  function scores() {
+    playerScoreText.textContent = playerScore;
+    computerScoreText.textContent = computerScore;
+  }
 }
 
 // Random name generator for beginning of round
@@ -109,4 +123,9 @@ function computerChoice() {
   const choice = ["Rock", "Paper", "Scissors"];
   const random = Math.floor(Math.random() * choice.length);
   return choice[random];
+}
+
+// Reset
+function restart() {
+  window.location.reload();
 }
