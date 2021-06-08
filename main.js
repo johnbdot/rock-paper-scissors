@@ -140,6 +140,11 @@ function randomName() {
     "Accidental Genius",
     "Chip Queen",
     "Desperado",
+    "FenderBoyXXX",
+    "Green Ghost",
+    "PoopFinger",
+    "A55 Kicken Chicken",
+    "Your Mother",
   ];
   const random = Math.floor(Math.random() * choice.length);
   return choice[random];
