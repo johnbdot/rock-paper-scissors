@@ -22,8 +22,7 @@ function roundStart() {
   computerScore = 0;
 
   // Displays scores and Player & Computer name
-  playerScoreText.textContent = playerScore;
-  computerScoreText.textContent = computerScore;
+  scores();
   playerNameText.textContent = playerNameInput;
   computerNameText.textContent = computerNameInput;
 
@@ -150,7 +149,7 @@ function randomName() {
   return choice[random];
 }
 
-// Reset
+// Restart function
 function restart() {
   window.location.reload();
 }
