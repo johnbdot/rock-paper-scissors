@@ -34,5 +34,9 @@
   padding: 20px;
 }
 .versus-results {
-  padding: 20px;
+  margin: 20px;
+}
+
+.results-style {
+  font-size: 1.5em;
 }
