@@ -8,16 +8,20 @@ const computerScoreText = document.querySelector(".computer-score");
 const resultsText = document.querySelector(".versus-results");
 const computerChoiceText = document.querySelector(".computer-choice");
 const startButton = document.querySelector(".start-button");
-const restartButton = document.querySelector(".restart-button");
+
+// Start game
+startButton.addEventListener("click", roundStart);
 
 // Round start
 function roundStart() {
   const playerNameInput = prompt("Enter your name:", randomName());
   const computerNameInput = prompt("Enter opponent's name:", randomName());
 
+  // Score reset
   playerScore = 0;
   computerScore = 0;
 
+  // Displays scores and Player & Computer name
   playerScoreText.textContent = playerScore;
   computerScoreText.textContent = computerScore;
   playerNameText.textContent = playerNameInput;
@@ -25,12 +29,21 @@ function roundStart() {
 
   play();
 
-  startButton.textContent = "Restart";
-  startButton.className = "restart-button";
+  // Remove Start button when round starts
+  startButton.remove();
+
+  // Create new button and name it Restart
+  const versusPanel = document.querySelector(".versus-panel");
+  const newButton = document.createElement("button");
+  newButton.className = "restart-button";
+  newButton.textContent = "Restart";
+  versusPanel.appendChild(newButton);
+
+  // Add restart function to new Restart button
   document.querySelector(".restart-button").addEventListener("click", restart);
 }
 
-// Play
+// Play game
 function play() {
   const rockButton = document.querySelector(".rock");
   const paperButton = document.querySelector(".paper");
@@ -86,41 +99,48 @@ function play() {
     }
     scores();
   }
-
-  // Win
-  function win() {
-    resultsText.textContent = "You WIN! 🥳";
-    playerScore++;
-  }
-
-  // Lose
-  function lose() {
-    resultsText.textContent = "You lose... 😭";
-    computerScore++;
-  }
-
-  // Tie
-  function tie() {
-    resultsText.textContent = "It's a tie! 😅";
-  }
-
-  // Scores display
-  function scores() {
-    playerScoreText.textContent = playerScore;
-    computerScoreText.textContent = computerScore;
-  }
-}
-
-// Random name generator for beginning of round
-function randomName() {
-  const choice = ["Joe", "Bob", "Sally"];
-  const random = Math.floor(Math.random() * choice.length);
-  return choice[random];
 }
 
 // Function for Computer's choice - Rock, Paper or Scissors
 function computerChoice() {
   const choice = ["Rock", "Paper", "Scissors"];
+  const random = Math.floor(Math.random() * choice.length);
+  return choice[random];
+}
+
+// Win
+function win() {
+  resultsText.textContent = "You WIN! 🥳";
+  playerScore++;
+}
+
+// Lose
+function lose() {
+  resultsText.textContent = "You lose... 😭";
+  computerScore++;
+}
+
+// Tie
+function tie() {
+  resultsText.textContent = "It's a tie! 😅";
+}
+
+// Scores display
+function scores() {
+  playerScoreText.textContent = playerScore;
+  computerScoreText.textContent = computerScore;
+}
+
+// Random name generator for beginning of round
+function randomName() {
+  const choice = [
+    "EatBullets",
+    "PR0_GGRAM3D",
+    "TheSickness",
+    "Accidental Genius",
+    "Chip Queen",
+    "Desperado",
+  ];
   const random = Math.floor(Math.random() * choice.length);
   return choice[random];
 }
