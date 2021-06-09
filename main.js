@@ -46,6 +46,14 @@ function roundStart() {
 
 // Game logic
 function play() {
+  const rockButton = document.querySelector(".rock");
+  const paperButton = document.querySelector(".paper");
+  const scissorsButton = document.querySelector(".scissors");
+
+  rockButton.addEventListener("click", rock);
+  paperButton.addEventListener("click", paper);
+  scissorsButton.addEventListener("click", scissors);
+
   // Keydown function
   document.addEventListener("keydown", key);
 
@@ -66,6 +74,7 @@ function play() {
 
   // Player chooses Rock
   function rock() {
+    playerChoiceText.textContent = "Rock";
     if (computerChoice() === "Scissors") {
       computerChoiceText.textContent = "Scissors";
       win();
@@ -81,6 +90,7 @@ function play() {
 
   // Player choose Paper
   function paper() {
+    playerChoiceText.textContent = "Paper";
     computerChoiceText.textContent = computerChoice();
     if (computerChoice() === "Rock") {
       computerChoiceText.textContent = "Rock";
@@ -97,6 +107,7 @@ function play() {
 
   // Player chooses Scissors
   function scissors() {
+    playerChoiceText.textContent = "Scissors";
     computerChoiceText.textContent = computerChoice();
     if (computerChoice() === "Paper") {
       computerChoiceText.textContent = "Paper";
