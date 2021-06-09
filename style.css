@@ -4,9 +4,7 @@
   box-sizing: border-box;
 }
 .container {
-  /* border: 5px solid red; */
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -14,15 +12,12 @@
   text-align: center;
 }
 .player-panel {
-  /* border: 5px solid blue; */
   width: 40%;
 }
 .versus-panel {
-  /* border: 5px solid green; */
   width: 20%;
 }
 .computer-panel {
-  /* border: 5px solid pink; */
   width: 40%;
 }
 .player-name,
@@ -39,4 +34,12 @@
 
 .results-style {
   font-size: 1.5em;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px 10px;
+  justify-content: center;
+  text-align: center;
 }
