@@ -6,6 +6,7 @@ const computerNameText = document.querySelector(".computer-name");
 const playerScoreText = document.querySelector(".player-score");
 const computerScoreText = document.querySelector(".computer-score");
 const resultsText = document.querySelector(".versus-results");
+const playerChoiceText = document.querySelector(".player-choice");
 const computerChoiceText = document.querySelector(".computer-choice");
 const startButton = document.querySelector(".start-button");
 
@@ -26,31 +27,42 @@ function roundStart() {
   playerNameText.textContent = playerNameInput;
   computerNameText.textContent = computerNameInput;
 
-  play();
-
   // Remove Start button when round starts
   startButton.remove();
 
-  // Create new button and name it Restart
+  // Create new button and name it Reset
   const versusPanel = document.querySelector(".versus-panel");
   const newButton = document.createElement("button");
-  newButton.className = "restart-button";
-  newButton.textContent = "Restart";
+  newButton.className = "reset-button";
+  newButton.textContent = "Reset";
   versusPanel.appendChild(newButton);
 
-  // Add restart function to new Restart button
-  document.querySelector(".restart-button").addEventListener("click", restart);
+  // Add reset function to new reset button
+  document.querySelector(".reset-button").addEventListener("click", reset);
+
+  // Run game logic
+  play();
 }
 
-// Play game
+// Game logic
 function play() {
-  const rockButton = document.querySelector(".rock");
-  const paperButton = document.querySelector(".paper");
-  const scissorsButton = document.querySelector(".scissors");
+  // Keydown function
+  document.addEventListener("keydown", key);
 
-  rockButton.addEventListener("click", rock);
-  paperButton.addEventListener("click", paper);
-  scissorsButton.addEventListener("click", scissors);
+  function key(e) {
+    if (e.code === "KeyR") {
+      playerChoiceText.textContent = "Rock";
+      rock();
+    }
+    if (e.code === "KeyP") {
+      playerChoiceText.textContent = "Paper";
+      paper();
+    }
+    if (e.code === "KeyS") {
+      playerChoiceText.textContent = "Scissors";
+      scissors();
+    }
+  }
 
   // Player chooses Rock
   function rock() {
@@ -149,7 +161,7 @@ function randomName() {
   return choice[random];
 }
 
-// Restart function
-function restart() {
+// reset function
+function reset() {
   window.location.reload();
 }
