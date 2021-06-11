@@ -8,35 +8,37 @@
     <title>John Bouakhasith: Rock, Paper, Scissors!</title>
   </head>
   <body>
-    <div class="container">
-      <div class="player-panel">
-        <div><h2 class="player-name">You</h2></div>
-        <div><h1 class="player-score">0</h1></div>
-        <div class="player-choice">
-          <p style="visibility: hidden">.</p>
+    <main>
+      <div class="top">
+        <div class="player-panel">
+          <div><h2 class="player-name">You</h2></div>
+          <div><h1 class="player-score">0</h1></div>
+          <div class="player-choice">
+            <p style="visibility: hidden">.</p>
+          </div>
+        </div>
+        <div class="versus-panel">
+          <h1>VS</h1>
+          <div class="versus-results results-style"></div>
+          <button class="start-button">Start</button>
+        </div>
+        <div class="computer-panel">
+          <div><h2 class="computer-name">Opponent</h2></div>
+          <div><h1 class="computer-score">0</h1></div>
+          <div class="computer-choice">
+            <p style="visibility: hidden">.</p>
+          </div>
         </div>
       </div>
-      <div class="versus-panel">
-        <h1>VS</h1>
-        <div class="versus-results results-style"></div>
-        <button class="start-button">Start</button>
+      <div class="bottom">
+        <div><button class="rock">Rock</button></div>
+        <div><button class="paper">Paper</button></div>
+        <div><button class="scissors">Scissors</button></div>
+        <div>R</div>
+        <div>P</div>
+        <div>S</div>
       </div>
-      <div class="computer-panel">
-        <div><h2 class="computer-name">Opponent</h2></div>
-        <div><h1 class="computer-score">0</h1></div>
-        <div class="computer-choice">
-          <p style="visibility: hidden">.</p>
-        </div>
-      </div>
-    </div>
-    <div class="controls">
-      <div><button class="rock">Rock</button></div>
-      <div><button class="paper">Paper</button></div>
-      <div><button class="scissors">Scissors</button></div>
-      <div>R</div>
-      <div>P</div>
-      <div>S</div>
-    </div>
+    </main>
     <script src="main.js"></script>
   </body>
 </html>
