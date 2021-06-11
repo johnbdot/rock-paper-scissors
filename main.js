@@ -91,7 +91,6 @@ function play() {
   // Player choose Paper
   function paper() {
     playerChoiceText.textContent = "Paper";
-    computerChoiceText.textContent = computerChoice();
     if (computerChoice() === "Rock") {
       computerChoiceText.textContent = "Rock";
       win();
@@ -108,7 +107,6 @@ function play() {
   // Player chooses Scissors
   function scissors() {
     playerChoiceText.textContent = "Scissors";
-    computerChoiceText.textContent = computerChoice();
     if (computerChoice() === "Paper") {
       computerChoiceText.textContent = "Paper";
       win();
