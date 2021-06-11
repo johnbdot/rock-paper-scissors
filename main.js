@@ -59,30 +59,30 @@ function play() {
 
   function key(e) {
     if (e.code === "KeyR") {
-      playerChoiceText.textContent = "Rock";
+      playerRock();
       rock();
     }
     if (e.code === "KeyP") {
-      playerChoiceText.textContent = "Paper";
+      playerPaper();
       paper();
     }
     if (e.code === "KeyS") {
-      playerChoiceText.textContent = "Scissors";
+      playerScissors();
       scissors();
     }
   }
 
   // Player chooses Rock
   function rock() {
-    playerChoiceText.textContent = "Rock";
+    playerRock();
     if (computerChoice() === "Scissors") {
-      computerChoiceText.textContent = "Scissors";
+      computerScissors();
       win();
     } else if (computerChoice() === "Paper") {
-      computerChoiceText.textContent = "Paper";
+      computerScissors();
       lose();
     } else {
-      computerChoiceText.textContent = "Rock";
+      computerRock();
       tie();
     }
     scores();
@@ -90,15 +90,15 @@ function play() {
 
   // Player choose Paper
   function paper() {
-    playerChoiceText.textContent = "Paper";
+    playerPaper();
     if (computerChoice() === "Rock") {
-      computerChoiceText.textContent = "Rock";
+      computerRock();
       win();
     } else if (computerChoice() === "Scissors") {
-      computerChoiceText.textContent = "Scissors";
+      computerScissors();
       lose();
     } else {
-      computerChoiceText.textContent = "Paper";
+      computerPaper();
       tie();
     }
     scores();
@@ -106,15 +106,15 @@ function play() {
 
   // Player chooses Scissors
   function scissors() {
-    playerChoiceText.textContent = "Scissors";
+    playerScissors();
     if (computerChoice() === "Paper") {
-      computerChoiceText.textContent = "Paper";
+      computerPaper();
       win();
     } else if (computerChoice() === "Rock") {
-      computerChoiceText.textContent = "Rock";
+      computerRock();
       lose();
     } else {
-      computerChoiceText.textContent = "Scissors";
+      computerScissors();
       tie();
     }
     scores();
@@ -149,6 +149,32 @@ function tie() {
 function scores() {
   playerScoreText.textContent = playerScore;
   computerScoreText.textContent = computerScore;
+}
+
+// Player choice display
+function playerRock() {
+  playerChoiceText.innerHTML = '<i class="fas fa-hand-rock rps"></i>';
+}
+
+function playerPaper() {
+  playerChoiceText.innerHTML = '<i class="fas fa-hand-paper rps"></i>';
+}
+
+function playerScissors() {
+  playerChoiceText.innerHTML = '<i class="fas fa-hand-scissors rps"></i>';
+}
+
+// Computer choice display
+function computerRock() {
+  computerChoiceText.innerHTML = '<i class="fas fa-hand-rock rps"></i>';
+}
+
+function computerPaper() {
+  computerChoiceText.innerHTML = '<i class="fas fa-hand-paper rps"></i>';
+}
+
+function computerScissors() {
+  computerChoiceText.innerHTML = '<i class="fas fa-hand-scissors rps"></i>';
 }
 
 // Random name generator for beginning of round
