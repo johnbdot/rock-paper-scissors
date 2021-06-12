@@ -9,12 +9,15 @@
   </head>
   <body>
     <main>
+      <div class="title">
+        <span class="text-effect">Rock, Paper, Scissors!</span>
+      </div>
       <div class="top">
         <div class="player-panel">
-          <div><h2 class="player-name">You</h2></div>
-          <div><h1 class="player-score">0</h1></div>
+          <div><h2 class="player-name text-effect">You</h2></div>
+          <div><h1 class="player-score score-color text-effect">0</h1></div>
           <div class="player-choice">
-            <p style="visibility: hidden">.</p>
+            <i class="fas fa-hand-rock rps" style="visibility: hidden"></i>
           </div>
         </div>
         <div class="versus-panel">
@@ -23,10 +26,10 @@
           <button class="start-button">Start</button>
         </div>
         <div class="computer-panel">
-          <div><h2 class="computer-name">Opponent</h2></div>
-          <div><h1 class="computer-score">0</h1></div>
+          <div><h2 class="computer-name text-effect">Opponent</h2></div>
+          <div><h1 class="computer-score score-color text-effect">0</h1></div>
           <div class="computer-choice">
-            <p style="visibility: hidden">.</p>
+            <i class="fas fa-hand-rock rps" style="visibility: hidden"></i>
           </div>
         </div>
       </div>
@@ -34,9 +37,6 @@
         <div><button class="rock">Rock</button></div>
         <div><button class="paper">Paper</button></div>
         <div><button class="scissors">Scissors</button></div>
-        <div class="key">R</div>
-        <div class="key">P</div>
-        <div class="key">S</div>
       </div>
     </main>
     <script

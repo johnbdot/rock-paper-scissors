@@ -8,6 +8,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #00ead3;
+  color: #005f99;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -15,35 +21,52 @@ main {
   width: 100vw;
   height: 100vh;
 }
+
 h1 {
   font-size: 5em;
 }
+
 h2 {
   font-size: 2em;
   font-style: italic;
 }
+
 button {
   padding: 15px 25px;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #fff;
-  background-color: #04aa6d;
+  background-color: #fff5b7;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
 button:hover {
-  background-color: #3e8e41;
+  background-color: #ff449f;
 }
 
 button:active {
-  background-color: #3e8e41;
+  background-color: #ff449f;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+/* Name effect */
+.text-effect {
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+}
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title span {
+  font-size: 10em;
+  margin-bottom: 50px;
+}
+
 .top {
   width: 100vw;
   display: flex;
@@ -52,15 +75,19 @@ button:active {
   align-items: center;
   text-align: center;
 }
+
 .player-panel {
   width: 40%;
 }
+
 .versus-panel {
   width: 20%;
 }
+
 .computer-panel {
   width: 40%;
 }
+
 .player-name,
 .player-score,
 .player-choice,
@@ -69,6 +96,7 @@ button:active {
 .computer-choice {
   padding: 20px;
 }
+
 .versus-results {
   margin: 20px;
 }
@@ -84,9 +112,15 @@ button:active {
   justify-content: center;
   text-align: center;
 }
+
 .rps {
   font-size: 5em;
 }
+
 .key {
   margin-top: 5px;
+}
+
+.score-color {
+  color: #ff449f;
 }
