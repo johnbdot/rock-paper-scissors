@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-const maxScore = 7;
 
 const playerNameText = document.querySelector(".player-name");
 const computerNameText = document.querySelector(".computer-name");
@@ -105,7 +104,7 @@ function play() {
     scores();
   }
 
-  // End game if maxScore reached
+  // End game if score reached
   function gameOver() {
     if (playerScore === 10) {
       resultsText.textContent = "You Won! 🥳";
