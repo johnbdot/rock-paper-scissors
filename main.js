@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+const maxScore = 7;
 
 const playerNameText = document.querySelector(".player-name");
 const computerNameText = document.querySelector(".computer-name");
@@ -54,53 +55,37 @@ function play() {
   paperButton.addEventListener("click", paper);
   scissorsButton.addEventListener("click", scissors);
 
-  // Keydown function
-  document.addEventListener("keydown", key);
-
-  function key(e) {
-    if (e.code === "KeyR") {
-      playerRock();
-      rock();
-    }
-    if (e.code === "KeyP") {
-      playerPaper();
-      paper();
-    }
-    if (e.code === "KeyS") {
-      playerScissors();
-      scissors();
-    }
-  }
+  resultsText.textContent = "First to 10 points wins!";
 
   // Player chooses Rock
   function rock() {
     playerRock();
     if (computerChoice() === "Scissors") {
       computerScissors();
-      win();
+      playerScore++;
     } else if (computerChoice() === "Paper") {
       computerScissors();
-      lose();
+      computerScore++;
     } else {
       computerRock();
-      tie();
     }
+    gameOver();
     scores();
   }
 
-  // Player choose Paper
+  // Player chooses Paper
   function paper() {
     playerPaper();
     if (computerChoice() === "Rock") {
       computerRock();
-      win();
+      playerScore++;
     } else if (computerChoice() === "Scissors") {
       computerScissors();
-      lose();
+      computerScore++;
     } else {
       computerPaper();
-      tie();
     }
+    gameOver();
     scores();
   }
 
@@ -109,15 +94,34 @@ function play() {
     playerScissors();
     if (computerChoice() === "Paper") {
       computerPaper();
-      win();
+      playerScore++;
     } else if (computerChoice() === "Rock") {
       computerRock();
-      lose();
+      computerScore++;
     } else {
       computerScissors();
-      tie();
     }
+    gameOver();
     scores();
+  }
+
+  // End game if maxScore reached
+  function gameOver() {
+    if (playerScore === 10) {
+      resultsText.textContent = "You Won! 🥳";
+      hideButtons();
+    }
+    if (computerScore === 10) {
+      resultsText.textContent = "You lost... 😭";
+      hideButtons();
+    }
+  }
+
+  // Hide buttons after game ends
+  function hideButtons() {
+    rockButton.style.visibility = "hidden";
+    paperButton.style.visibility = "hidden";
+    scissorsButton.style.visibility = "hidden";
   }
 }
 
@@ -128,23 +132,6 @@ function computerChoice() {
   return choice[random];
 }
 
-// Win
-function win() {
-  resultsText.textContent = "You WIN! 🥳";
-  playerScore++;
-}
-
-// Lose
-function lose() {
-  resultsText.textContent = "You lose... 😭";
-  computerScore++;
-}
-
-// Tie
-function tie() {
-  resultsText.textContent = "It's a tie! 😅";
-}
-
 // Scores display
 function scores() {
   playerScoreText.textContent = playerScore;
@@ -153,28 +140,34 @@ function scores() {
 
 // Player choice display
 function playerRock() {
-  playerChoiceText.innerHTML = '<i class="far fa-hand-rock rps"></i>';
+  playerChoiceText.innerHTML =
+    '<i class="fas fa-hand-rock rps text-effect"></i>';
 }
 
 function playerPaper() {
-  playerChoiceText.innerHTML = '<i class="far fa-hand-paper rps"></i>';
+  playerChoiceText.innerHTML =
+    '<i class="fas fa-hand-paper rps text-effect"></i>';
 }
 
 function playerScissors() {
-  playerChoiceText.innerHTML = '<i class="far fa-hand-scissors rps"></i>';
+  playerChoiceText.innerHTML =
+    '<i class="fas fa-hand-scissors rps text-effect"></i>';
 }
 
 // Computer choice display
 function computerRock() {
-  computerChoiceText.innerHTML = '<i class="far fa-hand-rock rps"></i>';
+  computerChoiceText.innerHTML =
+    '<i class="fas fa-hand-rock rps text-effect"></i>';
 }
 
 function computerPaper() {
-  computerChoiceText.innerHTML = '<i class="far fa-hand-paper rps"></i>';
+  computerChoiceText.innerHTML =
+    '<i class="fas fa-hand-paper rps text-effect"></i>';
 }
 
 function computerScissors() {
-  computerChoiceText.innerHTML = '<i class="far fa-hand-scissors rps"></i>';
+  computerChoiceText.innerHTML =
+    '<i class="fas fa-hand-scissors rps text-effect"></i>';
 }
 
 // Random name generator for beginning of round
@@ -196,7 +189,7 @@ function randomName() {
   return choice[random];
 }
 
-// reset function
+// Reset function
 function reset() {
   window.location.reload();
 }
