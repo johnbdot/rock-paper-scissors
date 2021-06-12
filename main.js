@@ -153,28 +153,28 @@ function scores() {
 
 // Player choice display
 function playerRock() {
-  playerChoiceText.innerHTML = '<i class="fas fa-hand-rock rps"></i>';
+  playerChoiceText.innerHTML = '<i class="far fa-hand-rock rps"></i>';
 }
 
 function playerPaper() {
-  playerChoiceText.innerHTML = '<i class="fas fa-hand-paper rps"></i>';
+  playerChoiceText.innerHTML = '<i class="far fa-hand-paper rps"></i>';
 }
 
 function playerScissors() {
-  playerChoiceText.innerHTML = '<i class="fas fa-hand-scissors rps"></i>';
+  playerChoiceText.innerHTML = '<i class="far fa-hand-scissors rps"></i>';
 }
 
 // Computer choice display
 function computerRock() {
-  computerChoiceText.innerHTML = '<i class="fas fa-hand-rock rps"></i>';
+  computerChoiceText.innerHTML = '<i class="far fa-hand-rock rps"></i>';
 }
 
 function computerPaper() {
-  computerChoiceText.innerHTML = '<i class="fas fa-hand-paper rps"></i>';
+  computerChoiceText.innerHTML = '<i class="far fa-hand-paper rps"></i>';
 }
 
 function computerScissors() {
-  computerChoiceText.innerHTML = '<i class="fas fa-hand-scissors rps"></i>';
+  computerChoiceText.innerHTML = '<i class="far fa-hand-scissors rps"></i>';
 }
 
 // Random name generator for beginning of round
