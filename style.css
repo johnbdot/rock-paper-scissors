@@ -63,7 +63,7 @@ button:active {
 }
 
 .title span {
-  font-size: 10em;
+  font-size: 10vw;
   margin-bottom: 50px;
 }
 
@@ -103,6 +103,10 @@ button:active {
 
 .results-style {
   font-size: 2em;
+}
+
+.results {
+  font-size: 2vw;
 }
 
 .bottom {
