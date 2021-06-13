@@ -59,15 +59,15 @@ function play() {
 
   // Player chooses Rock
   function rock() {
-    playerRock();
+    playerRPS("rock");
     if (computerChoice() === "Scissors") {
-      computerScissors();
+      computerRPS("scissors");
       playerScore++;
     } else if (computerChoice() === "Paper") {
-      computerScissors();
+      computerRPS("paper");
       computerScore++;
     } else {
-      computerRock();
+      computerRPS("rock");
     }
     gameOver();
     scores();
@@ -75,15 +75,15 @@ function play() {
 
   // Player chooses Paper
   function paper() {
-    playerPaper();
+    playerRPS("paper");
     if (computerChoice() === "Rock") {
-      computerRock();
+      computerRPS("rock");
       playerScore++;
     } else if (computerChoice() === "Scissors") {
-      computerScissors();
+      computerRPS("scissors");
       computerScore++;
     } else {
-      computerPaper();
+      computerRPS("paper");
     }
     gameOver();
     scores();
@@ -91,15 +91,15 @@ function play() {
 
   // Player chooses Scissors
   function scissors() {
-    playerScissors();
+    playerRPS("scissors");
     if (computerChoice() === "Paper") {
-      computerPaper();
+      computerRPS("paper");
       playerScore++;
     } else if (computerChoice() === "Rock") {
-      computerRock();
+      computerRPS("rock");
       computerScore++;
     } else {
-      computerScissors();
+      computerRPS("scissors");
     }
     gameOver();
     scores();
@@ -137,36 +137,13 @@ function scores() {
   computerScoreText.textContent = computerScore;
 }
 
-// Player choice display
-function playerRock() {
-  playerChoiceText.innerHTML =
-    '<i class="fas fa-hand-rock rps text-effect"></i>';
+// Display choice for Player and Computer
+function playerRPS(choice) {
+  playerChoiceText.innerHTML = `<i class="fas fa-hand-${choice} rps text-effect"></i>`;
 }
 
-function playerPaper() {
-  playerChoiceText.innerHTML =
-    '<i class="fas fa-hand-paper rps text-effect"></i>';
-}
-
-function playerScissors() {
-  playerChoiceText.innerHTML =
-    '<i class="fas fa-hand-scissors rps text-effect"></i>';
-}
-
-// Computer choice display
-function computerRock() {
-  computerChoiceText.innerHTML =
-    '<i class="fas fa-hand-rock rps text-effect"></i>';
-}
-
-function computerPaper() {
-  computerChoiceText.innerHTML =
-    '<i class="fas fa-hand-paper rps text-effect"></i>';
-}
-
-function computerScissors() {
-  computerChoiceText.innerHTML =
-    '<i class="fas fa-hand-scissors rps text-effect"></i>';
+function computerRPS(choice) {
+  computerChoiceText.innerHTML = `<i class="fas fa-hand-${choice} rps text-effect"></i>`;
 }
 
 // Random name generator for beginning of round
