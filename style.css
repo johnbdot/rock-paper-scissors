@@ -77,7 +77,10 @@ button:active {
 }
 
 .player-panel {
-  width: 40%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
 }
 
 .versus-panel {
@@ -85,7 +88,7 @@ button:active {
 }
 
 .computer-panel {
-  width: 40%;
+  width: 400px;
 }
 
 .player-name,
