@@ -50,11 +50,12 @@ function play() {
   const paperButton = document.querySelector(".paper");
   const scissorsButton = document.querySelector(".scissors");
 
+  // Click events
   rockButton.addEventListener("click", rock);
   paperButton.addEventListener("click", paper);
   scissorsButton.addEventListener("click", scissors);
 
-  resultsText.textContent = "First to 10 points wins!";
+  resultsText.textContent = "Best out of 7 Wins!";
 
   // Player chooses Rock
   function rock() {
@@ -106,11 +107,10 @@ function play() {
 
   // End game if score reached
   function gameOver() {
-    if (playerScore === 10) {
+    if (playerScore === 4) {
       resultsText.textContent = "You Won! 🥳";
       hideButtons();
-    }
-    if (computerScore === 10) {
+    } else if (computerScore === 4) {
       resultsText.textContent = "You lost... 😭";
       hideButtons();
     }
