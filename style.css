@@ -142,6 +142,10 @@ button:active {
 }
 
 @media only screen and (max-width: 425px) {
+  main {
+    height: 90vh;
+  }
+
   .versus-results {
     display: none;
   }
