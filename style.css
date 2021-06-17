@@ -68,6 +68,7 @@ button:active {
 }
 
 .top {
+  margin-bottom: 40px;
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -77,18 +78,16 @@ button:active {
 }
 
 .player-panel {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
+  width: 300px;
 }
 
 .versus-panel {
   width: 20%;
+  text-align: center;
 }
 
 .computer-panel {
-  width: 400px;
+  width: 300px;
 }
 
 .player-name,
@@ -130,4 +129,34 @@ button:active {
 
 .score-color {
   color: #ff449f;
+}
+
+@media only screen and (max-width: 768px) {
+  .results {
+    font-size: 2.5vw;
+  }
+
+  .versus-panel {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .versus-results {
+    display: none;
+  }
+
+  .vs {
+    margin: 10px;
+    font-size: 50px;
+  }
+
+  .player-name,
+  .computer-name {
+    font-size: 5vw;
+  }
+
+  .fas {
+    font-size: 60px;
+  }
 }
